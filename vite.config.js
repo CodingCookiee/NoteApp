@@ -1,21 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import cssExport from 'vite-plugin-css-export';
-import { createHtmlPlugin } from 'vite-plugin-html';
 
 export default defineConfig({
-  plugins: [
-    react(),
-    cssExport(),
-    createHtmlPlugin({
-      minify: true,
-      inject: {
-        data: {
-          title: 'ReactTemplateApp',
-        },
-      },
-    }),
-  ],
+  plugins: [react()],
   resolve: {
     alias: {
       '@': '/src',
@@ -25,10 +12,6 @@ export default defineConfig({
     port: 3000,
   },
   build: {
-    rollupOptions: {
-      external: [],
-    },
     sourcemap: true,
-    
   },
 });
