@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import cssExport from 'vite-plugin-css-export';
+import reactRefresh from '@vitejs/plugin-react-refresh';
 import { createHtmlPlugin } from 'vite-plugin-html';
 
 export default defineConfig({
@@ -25,6 +26,9 @@ export default defineConfig({
     port: 3000,
   },
   build: {
+     rollupOptions: {
+      external: ['react-dom/client'],
+    },
     sourcemap: true,
   },
 });
