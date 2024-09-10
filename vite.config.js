@@ -26,8 +26,5 @@ export default defineConfig({
   },
   build: {
     sourcemap: true,
-     rollupOptions: {
-      external: ['react-dom/client']
-    }
   },
 });
