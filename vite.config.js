@@ -25,6 +25,10 @@ export default defineConfig({
     port: 3000,
   },
   build: {
+    rollupOptions: {
+      external: ['react-dom/client'],
+    },
     sourcemap: true,
+    
   },
 });
